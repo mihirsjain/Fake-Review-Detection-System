@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fake Review Detection System</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Fake Review Detection System</h1>
+     <h3> Enter your review</h3>
+	
+     <!-- Main Input For Receiving Query to our ML -->
+		<form action="{{ url_for('predict')}}"method="post">
+    	<!--<input type="text" name="review_text" placeholder="review_text" required="required" size=50/>-->
+		<textarea name="review" style="width: 500px" rows="5"></textarea>
+       <button type="submit" class="btn">Predict</button>
+    </form>
+	<br>
+    <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
